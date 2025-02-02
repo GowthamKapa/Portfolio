@@ -12,7 +12,7 @@ body{
     width: 100%;
     height: 100%;
     min-height: 100vh;
-    background: #222;
+    background: #ecf0f1;
 }
 .wrapper{
     width: 1280px;
@@ -35,9 +35,9 @@ header{
 .logo i{
     height: 45px;
     width: 45px;
-    background-color: #007ced;
+    background-color: #e74c3c;
     border-radius: 50%;
-    color: #fff;
+    color: #2c3e50;
     font-weight: 700;
     font-size: 1.5rem;
     padding: 10px;
@@ -46,7 +46,231 @@ header{
     text-align: center;
 }
 .logo .logo-text{
-    padding: 10px;
-    margin-right: 5px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #2c3e50;
 }
- 
+nav .togglebtn{
+    width: 40px;
+    height: 25px;
+    position: absolute;
+    justify-content: space-between;
+    top: 45px;
+    right: 3%;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+    transition: all 0.3s ease;
+}
+nav .togglebtn span{
+    display: block;
+    background-color: #34495e;
+    margin: 5px 0px;
+    width: 100%;
+    height: 3px;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+    transition-property: transform, opacity;
+}
+nav .navlinks{
+    list-style-type: none;
+}
+nav .navlinks li{
+    display:inline-block;
+    transition: background-position-x 0.9s linear;
+}
+nav .navlinks li a{
+    color: #e74c3c;
+    transition: color 0.4s ease;
+    margin-right: 2.5rem;
+    position: relative;
+    padding-bottom: 5px; /* Space for underline */
+}
+nav .navlinks li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #d94f5c;
+    transition: width 0.4s ease-in-out;
+}
+
+/* Hover Effects */
+nav .navlinks li:hover a {
+    color: #d94f5c;
+}
+
+nav .navlinks li:hover a::after {
+    width: 100%; /* Expands the underline */
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 4rem;
+}
+.container .hero-pic{
+    width: 550px;
+    height: 550px;
+    border-radius: 40px;
+    overflow: hidden;
+   /* border: 15px solid #444; */
+    box-shadow: 5px 7px 28px rgba(0,0,0,0.5);
+}
+.hero-pic img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+/*.hero-pic img:hover{
+    transform: scale(1.2);
+}*/
+.hero-text{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.hero-text h5{
+    color: #34495e;
+    font-size: 14px;
+}
+.hero-text h5 span{
+    color: #e74c3c;
+    font-size: 16px;
+}
+.hero-text h1{
+    color: #2c3e50;
+    font-size: 3rem;
+}
+.hero-text p{
+    color: #2c3e50;
+}
+.btn-group{
+    margin: 45px 0;
+}
+.btn-group .btn{
+    border-color: #d5d5d5;
+    color: #fff;
+    background-color: #333;
+    padding: 12px 25px;
+    margin: 5px 0;
+    margin-right: 7px;
+    border-radius: 30px;
+    border: 2px solid #e5e5e5;
+    box-shadow: 0 10px 10px -8px rgb(0 0 0 / 78%);
+}
+.btn:hover{
+    border-color: #e74c3c;
+}
+.hero-text .social i{
+    color: #e74c3c;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: 0.5s;
+    padding: 0px 5px;
+}
+.hero-text .social i.fa-github:hover{
+    color: #2c3e50;
+    transform: rotate(180deg);
+}
+.hero-text .social i.fa-instagram:hover{
+    
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+          /* Also define standard property for compatibility */
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  font-size: 20px; /* change this to change the size*/
+    transform: rotate(180deg);
+}
+.hero-text .social i.fa-twitter:hover{
+    color: #1da1f2;
+    transform: rotate(180deg);
+}
+.hero-text .social i.fa-linkedin:hover{
+    color: #0e76a8;
+    transform: rotate(180deg);
+}
+/* Responsive design $ displaying nav bar for small screen */
+
+@media screen and (max-width:600px)
+{
+    .container .hero-pic{
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        margin-top: 2rem;
+    }
+    .hero-pic img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+    /* for toggle button */
+    nav .togglebtn{
+        display: initial;
+    }
+    .click{
+        top:45px;
+    }
+    .click span{
+        position: absolute;
+        margin-top: 12px;
+    }
+    .click span:first-child{
+        transform: rotate(45deg);
+    }
+    .click span:nth-child(2){
+        opacity: 0;
+        margin: 0; 
+    } 
+    .click span:last-child{
+        transform:  rotate(-45deg);
+        top: 0;
+    } 
+    nav .navlinks{
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        background-color: #222; 
+        z-index: 2;
+        box-shadow: 5px 13px 30px rgba(0,0,0,0.1);
+        transition: 0.5s;
+        padding: 70px 0px;
+    }
+    nav .navlinks li{
+        display: block;
+        
+    }
+    nav .navlinks li a{
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    nav .navlinks.open{
+        right: 0;
+    }
+    
+}
+@media(max-width:768px){
+    .container{
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+    .hero-text{
+        padding: 40px 0px;
+    }
+    header .logo{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: small;
+    }
+}

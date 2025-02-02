@@ -1,0 +1,11 @@
+# macOS system files
+.DS_Store
+.zsh_sessions/
+.zsh_history
+
+# VS Code settings
+.vscode/
+*.log
+
+# Ignore everything in home directory (optional)
+/Users/gowthamkapa/*
