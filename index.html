@@ -14,24 +14,69 @@
             <div class="wrapper">
                 <header>
                     <div class="logo">
-                        <i class="fa-solid fa-v"></i>
-                        <div class="logo-text">Venkata Gowtham Sai Kapa</div>
+                        <i class="fa-solid fa-g"></i>
+                        <div class="logo-text">Gowtham</div>
                     </div>
                     <nav>
-                        <div class="togglebttn">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                        <div class="togglebtn">
+                            <span class="first"></span>
+                            <span class=""></span>
+                            <span class="last"></span>
                         </div>
                         <ul class="navlinks">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">Resume</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#resume">Resume</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </nav>
                 </header>
+                <div class="container">
+                    <div class="hero-pic">
+                        <img src="Images/IMG.jpeg" alt="profile pic">
+                    </div>
+                    <div class="hero-text">
+                        <h5>Hi I'm <span class="input">Frontend Developer</span></h5>
+                        <h1>Gowtham Kapa</h1>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero cumque magni, 
+                            dignissimos voluptatum ex voluptate voluptates aspernatur temporibus accusantium 
+                            unde aliquam aliquid! Iusto fugiat laboriosam vel, fugit accusantium unde labore!
+                        </p>
+                        <div class="btn-group">
+                            <a href="#" class="btn active">Download CV</a>
+                            <a href="#" class="btn">Contact</a>
+                        </div>
+                        <div class="social">
+                            <a href="#" id="github"><i class="fa-brands fa-github"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="home"></div>
+        <div class="about"></div>
+        <div class="resume"></div>
+        <div class="contact"></div>
+        <!-- typed Js library for typing text effect -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+        <script>
+            /** creating func for bttn click to show and hide navbar **/
+            var togglebtn=document.querySelector(".togglebtn");
+            var nav=document.querySelector(".navlinks");
+            var links=document.querySelector(".navlinks li");
+            togglebtn.addEventListener("click", function(){
+                this.classList.toggle("click");
+                nav.classList.toggle("open");
+            })
+            var typed=new Typed(".input", {
+                strings:["Frontend Developer", "UX Designer", "Web Developer"],
+                typedSpeed:70,
+                backSpeed:55,
+                loop:true
+            });
+        </script>
     </body>
 </html>
